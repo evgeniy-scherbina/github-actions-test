@@ -43,3 +43,6 @@ jobs:
 
       - name: Test
         run: go test -v ./...
+
+      - name: launch docker-compose
+        run: docker-compose up
