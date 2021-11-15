@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_USER: pguser
+      POSTGRES_DB: pgdb
+    volumes:
+      - database_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  solana-test-validator:
+    image: scherbina/solana-test-validator
+    ports:
+      - 8899:8899
+
+volumes:
+  database_data:
